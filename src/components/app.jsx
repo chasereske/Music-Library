@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react'; 
-import AxiosCall from './MusicTable/musicTable';
+import MusicList from './MusicTable/musicTable';
 import Navbar from './Navbar/navbar';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
                 <Navbar/>
                 <div className="row row-spacer">
                     <h1>Our React App Using a Component</h1>
-                    <AxiosCall/>
+                    <MusicList/>
                 </div>
             </div>
         );
