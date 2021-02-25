@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import axios from 'axios';
+import './musicTable.css'; 
 
     
 
@@ -55,8 +56,8 @@ class MusicList extends Component {
                 </div> */
 
                 <div>
-                    <h1>Music Library Table</h1>
-                    <table>
+                    <h1 id='title'>Music Library Table</h1>
+                    <table id='song'>
                         <tbody>
                             {this.renderTableHeader()}
                             {this.renderTableData()}
