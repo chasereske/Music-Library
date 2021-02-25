@@ -43,18 +43,7 @@ class MusicList extends Component {
 
         render(){
             return(
-              
-                /*<ul>
-                    {this.state.music.map(music => <li>Title: {music.title}. Album: {music.album}. Artist: {music.artist}. Genre: {music.genre} </li>)}
-                </ul>*/
-
-                /* <div>
-                    <table>
-
-                        {this.state.music.map(song => <TableRow  song = {song} />)}//<tr><td>props.song.title</td><td>{this.props.song.artist}</td></tr>
-                    </table>
-                </div> */
-
+            
                 <div>
                     <h1 id='title'>Music Library Table</h1>
                     <table id='song'>
@@ -65,7 +54,7 @@ class MusicList extends Component {
                     </table>
                 </div>
         
-                );
+            );
         }
     }
 
