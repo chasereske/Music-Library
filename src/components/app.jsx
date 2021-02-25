@@ -12,7 +12,6 @@ class App extends Component {
                 <Navbar/>
                 <SearchBar/>
                 <div className="row row-spacer">
-                    <h1>Check out the Playlist!</h1>
                     <MusicList/>
                 </div>
             </div>
