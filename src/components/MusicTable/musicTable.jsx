@@ -13,7 +13,7 @@ class MusicList extends Component {
         }
 
         componentDidMount(){
-            axios.get('http://www.devcodecampmusiclibrary.com/api/music').then(response=> {
+                axios.get('http://localhost:3000/api/songs').then(response=> {
                 console.log(response);
                 this.setState({music: response.data});
             });    
