@@ -5,14 +5,29 @@ import Navbar from './Navbar/navbar';
 import SearchBox from './SearchBar/searchBar';
 
 class App extends Component {
-    state = { }
+    constructor(){
+        super()
+        this.state={
+            music: [],
+            searchBox: ''
+        }
+    }
+
+    onSearchBoxChange = (event) =>{
+        this.setState({searchBox: event.target.value});
+        console.log(this.state.searchBox);
+    }
+    filteredMusic(){
+        
+    }
     render() {
+
         return(
             <div className="container-fluid">
                 <Navbar/>
-                <SearchBox/>
+                <SearchBox searchBoxChange={this.onSearchBoxChange}/>
                 <div className="row row-spacer">
-                    <MusicList/>
+                    <MusicList />
                 </div>
             </div>
         );

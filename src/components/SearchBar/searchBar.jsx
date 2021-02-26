@@ -16,12 +16,13 @@ import React from 'react';
 
 export default SearchBar;*/
 
-const SearchBox = (props) => {
+const SearchBox = ({searchBoxChange}) => {
+
   return (
     <input type = 'search'
     className = 'search'
-    placeholder = {'Search Music'}
-    onChange = {(e) => console.log(e)}
+    placeholder = 'Search Music'
+    onChange = {searchBoxChange}
     />
   )
 }
