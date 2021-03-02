@@ -9,25 +9,36 @@ class App extends Component {
         super()
         this.state={
             music: [],
-            searchBox: ''
+            searchBox: '',
+            filteredMusic: []
         }
     }
 
+    componentDidMount(){
+        axios.get('http://localhost:3000/api/songs').then(response=> {
+        console.log(response);
+        this.setState({music: response.data});
+    });    
+}
     onSearchBoxChange = (event) =>{
-        this.setState({searchBox: event.target.value});
+        this.setState({searchBox: event.target.value.toLowerCase()});
         console.log(this.state.searchBox);
     }
-    filteredMusic(){
-        
-    }
-    render() {
 
+
+
+
+    render() {
+       const filteredMusic = this.state.music.filter(song => {
+           return song.title.toLowerCase().includes(this.state.searchBox) || song.artist.toLowerCase().includes(this.state.searchBox) || song.album.toLowerCase().includes(this.state.searchBox) || song.genre.toLowerCase().includes(this.state.searchBox)
+       })
+       console.log(filteredMusic);
         return(
             <div className="container-fluid">
                 <Navbar/>
                 <SearchBox searchBoxChange={this.onSearchBoxChange}/>
                 <div className="row row-spacer">
-                    <MusicList />
+                    <MusicList music = {filteredMusic} />
                 </div>
             </div>
         );
